@@ -1,7 +1,19 @@
 import { model, Schema } from "mongoose";
 
-const birdSchema = new Schema(
-    
-)
+const appearanceSchema = new Schema({
+  _id: Schema.Types.ObjectId,
+  size: String,
+  color: [String],
+});
 
-export default model('Bird',)
+export const birdSchema = new Schema({
+  _id: String,
+  commonName: String,
+  scientificName: String,
+  description: String,
+  habitat: [String],
+  appearance: appearanceSchema,
+  photos: [String],
+});
+
+export default model("Bird", birdSchema);
