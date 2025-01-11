@@ -16,4 +16,7 @@ export const birdSchema = new Schema({
   photos: [String],
 });
 
-export default model("Bird", birdSchema);
+const Bird = model("Bird", birdSchema);
+export default Bird;
+
+let a = new Bird(12);

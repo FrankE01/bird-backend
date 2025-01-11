@@ -21,7 +21,6 @@ router.post("/create", async (req: Request, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  // console.log(req.params)
   const bird = await getBird(req.params.id);
   res.send(bird);
 });

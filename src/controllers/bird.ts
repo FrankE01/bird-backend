@@ -1,13 +1,14 @@
-import Bird, { birdSchema } from "../models/bird";
+import Bird from "../models/bird";
 
 export const getAllBirds = async () => {
   const birds = await Bird.find({});
+
   return birds;
 };
 
 export const createBird = async (bird: any) => {
-  //todo: add type checking
   const newbird = new Bird(bird);
+
   await newbird.save();
 };
 
